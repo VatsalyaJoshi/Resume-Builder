@@ -1,0 +1,259 @@
+<title>RESUME BUILDER</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.min.js"></script>
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+ 
+
+
+ <h3 class="w3-xxlarge w3-center">Resume builder </h3>
+   
+<div class="w3-large w3-padding" style="background-color: yellow;">
+Name : <input type="text" id="fullname"> <br> <br>
+DOB : <input type="date" id="date"> <br> <br>
+Phone : <input type="number" id="phone" maxlength="10"data-toggle="popover" data-trigger="hover" data-content="10 digits only" placeholder="Phone no" title="Tip 💡"> <br> <br>
+Email : <input type="email" id="email"> <br> <br>
+Address line 1: <input type="text" id="add"> <br> <br>
+
+Address line 2: <input type="text" id="add2"> <br> <br>
+
+Address line 3: <input type="text" id="add3"> <br> <br> 
+  
+Educational Qualifiacation SSC year: <input type="text" id="ssc" data-toggle="popover" title="Tip 💡" data-trigger="hover" data-content="SSC completed in 2018-19 from University of Mumbai" placeholder="SSC year passed" placeholder="SSC"><br> <br>
+  
+Educational Qualifiacation SSC Board: <input type="text" id="sscboard" data-toggle="popover" title="Tip 💡" data-trigger="hover" data-content="SSC completed in 2018-19 from University of Mumbai" placeholder="SSC board" placeholder="SSC board"><br> <br>
+  
+Educational Qualifiacation HSC year: <input type="text" id="hsc" data-toggle="popover" title="Tip 💡" data-trigger="hover" data-content="HSC completed in 2018-19 from University of Mumbai" placeholder="HSC year passed"  > <br> <br>  
+ 
+Educational Qualifiacation HSC Board: <input type="text" id="hscboard" data-toggle="popover" title="Tip 💡" data-trigger="hover" data-content="SSC completed in 2018-19 from University of Mumbai" placeholder="HSC board" placeholder="SSC"><br> <br>  
+
+Educational Qualifiacation Graduation year: <input type="text" id="degree" data-toggle="popover" title="Tip 💡" data-trigger="hover" data-content="BCOM/BMS/BSC/BA completed in 2018-19 from University of Mumbai" placeholder="Graduation year passeed"> <br> <br>  
+  
+Educational Qualifiacation Graduation board: <input type="text" id="degreeboard" data-toggle="popover" title="Tip 💡" data-trigger="hover" data-content="BCOM/BMS/BSC/BA completed in 2018-19 from University of Mumbai" placeholder="Graduation board" placeholder="SSC"><br> <br>  
+
+Educational Qualifiacation PG year: <input type="text" id="pg" placeholder="Post Graduation year passed (Optional)"> <br> <br>
+  
+Educational Qualifiacation PG board: <input type="text" id="pgboard" placeholder="Post Graduation board (Optional)"> <br> <br>
+
+  
+ Key Skills : <input type="text" id="skills" data-toggle="popover" title="Tip 💡" data-trigger="hover" data-content="Excel, Advance Excel, Microsoft office" placeholder="key skills"> <br> <br>  
+
+  Key Skills 2: <input type="text" id="skills2" data-toggle="popover" title="Tip 💡" data-trigger="hover" data-content="Excel, Advance Excel, Microsoft office" placeholder="key skills"> <br> <br>
+  
+  Key Skills 3: <input type="text" id="skills3" data-toggle="popover" title="Tip 💡" data-trigger="hover" data-content="Excel, Advance Excel, Microsoft office" placeholder="key skills"> <br> <br>
+  
+ Hobbies : <input type="text" id="hobbies" data-toggle="popover" title="Tip 💡" data-trigger="hover" data-content="Artificial Intelegence, Travelling, Singing" placeholder="Areas of interests"> <br> <br>
+
+  Hobbies 2: <input type="text" id="hobbies2" data-toggle="popover" title="Tip 💡" data-trigger="hover" data-content="Artificial Intelegence, Travelling, Singing" placeholder="Areas of interests"> <br> <br>
+  
+  Hobbies 3: <input type="text" id="hobbies3" data-toggle="popover" title="Tip 💡" data-trigger="hover" data-content=" Solving Puzzel, Drawing, Reading" placeholder="Areas of interests"> <br> <br>
+  
+<input type="submit" class="w3-btn w3-green w3-round w3-ripple" value="Download Resume" onclick="download()">
+
+    <br><br>
+<input type="submit" class="w3-btn w3-green w3-round w3-ripple" value="Download Resume (2)" onclick="download2()">
+ <br> <br>
+  <input type="submit" class="w3-btn w3-green w3-round w3-ripple" value="Download Resume (3)" onclick="download3()">
+  </div>
+
+<script>
+  var fullname = document.getElementById("fullname");
+  
+  var dob = document.getElementById("date");
+
+  var phone = document.getElementById("phone");
+  
+  var email = document.getElementById("email");
+  
+   var add = document.getElementById("add");
+
+  var add2 = document.getElementById("add2");
+
+  var add3 = document.getElementById("add3");
+  
+  var ssc = document.getElementById("ssc");
+
+  var sscboard = document.getElementById("sscboard");
+
+  var hsc = document.getElementById("hsc");
+  
+  var hscboard = document.getElementById("hscboard");
+  
+  var degree = document.getElementById("degree");
+  
+  var degreeboard = document.getElementById("degreeboard");
+  
+  var pg = document.getElementById("pg");
+  
+  var pgboard = document.getElementById("pgboard");
+  
+  var skills = document.getElementById("skills");
+
+  var skills2 = document.getElementById("skills2");  
+  
+  var skills3 = document.getElementById("skills3");
+  
+  var hobbies  = document.getElementById("hobbies");
+  
+  var hobbies2  = document.getElementById("hobbies2");
+  
+  var hobbies3  = document.getElementById("hobbies3");
+  
+function download() {
+var doc = new jsPDF({
+    orientation: 'p',
+    format: 'a4',
+//210 x 297mm	
+});
+
+
+doc.setFontSize(24);
+doc.setFontType("bold");  
+doc.text(90, 20, 'Resume');
+  
+ doc.setFontSize(16);
+ doc.setFontType("normal");
+  
+  doc.text(20, 40, 'Name : '+ fullname.value);
+
+  doc.text(20, 50, 'Date of birth : '+dob.value);
+
+  doc.text(20, 60, 'Contact : '+phone.value);
+
+  doc.text(20, 70, 'Email ID : '+email.value);
+  
+  
+  doc.text(130, 40, 'Address :');
+  
+  doc.text(130, 50, ''+add.value);
+  
+  doc.text(130, 60, ''+add2.value);
+  
+  doc.text(130, 70, ''+add3.value);
+
+doc.line(10, 120, 200, 120) // horizontal line
+
+  doc.setFontSize(20);  
+  doc.setFontType("bold");  
+  doc.text(20, 130, 'Educational qualification');
+  doc.setFontSize(16);    
+  doc.setFontType("normal");  
+  doc.text(20, 140, ''+ssc.value);
+  doc.text(20, 150, ''+hsc.value);
+  doc.text(20, 160, ''+degree.value);
+  doc.text(20, 170, ''+pg.value);
+
+// Save the PDF
+doc.save('document.pdf');
+}
+
+// Download style 3 
+function download3() {
+var doc = new jsPDF({
+    orientation: 'p',
+    format: 'a4',
+//210 x 297mm	
+});
+
+  doc.setDrawColor(130, 0, 225) // draw red lines
+doc.setLineWidth(5)
+doc.line(0, 0, 217, 0) // horizontal line
+doc.setFont('courier')
+doc.setFontType("bold");
+doc.setFontSize(40);
+doc.text(5,27,""+ fullname.value);
+
+doc.setDrawColor(0, 0, 0) // draw red lines
+doc.setFontSize(16);
+doc.setLineWidth(0.1)
+doc.line(60, 45, 60, 300) // vertical line
+doc.line(0, 45, 217, 45) // horizontal line
+doc.setFontType("normal");
+
+ doc.text(5, 40, 'CONTACT : '+ phone.value);
+ doc.text(90, 40, 'EMAIL ID : '+email.value); 
+  
+  
+  
+  
+  doc.setFontSize(20);  
+  doc.setFontType("bold");  
+  doc.text(20, 130, 'Education qualification');
+  doc.setFontSize(16);    
+  doc.setFontType("normal");  
+  doc.text(20, 140, ''+ssc.value);
+  doc.text(20, 150, ''+hsc.value);
+  doc.text(20, 160, ''+degree.value);
+  doc.text(20, 170, ''+pg.value);
+
+//Save the PDF
+doc.save('document.pdf');
+}
+  // Download style 2
+function download2() {
+var doc = new jsPDF({
+    orientation: 'p',
+    format: 'a4',
+
+});
+
+doc.setFont('verdana')
+doc.setFontSize(30);
+doc.setFontType("bold");
+doc.setTextColor(0, 0, 255);
+doc.text(20, 20, fullname.value);
+ doc.line(10, 25, 200, 25) // horizontal line
+ 
+ doc.setFont('times')
+ doc.setTextColor(0, 0, 0);
+
+ doc.setFontSize(16);
+ doc.setFontType("normal");
+  
+ doc.text(20, 35, 'Contact : '+ phone.value);
+ doc.text(100, 35, 'Email ID : '+email.value);
+ 
+ doc.line(10, 40, 200, 40) // horizontal line
+
+  //doc.text(20, 50, 'Date of birth : '+dob.value);
+ doc.setFontType("bold");
+
+  doc.text(20, 50, 'Career Objective');
+  
+ doc.setFontType("normal");
+
+  doc.text(20, 60, 'To make a career with an esteemed organization by contributing my hard work \r\nto achieve its goals and objective.');
+  //doc.text(20, 70, 'to achieve its goals and objective.');
+  doc.line(10, 75, 200, 75) // horizontal line 
+  //doc.line(10, 95, 200, 95) // horizontal line
+
+  doc.setFontType("bold");  
+  doc.text(20, 130, 'Educational qualification');
+  doc.setFontSize(16);    
+  doc.setFontType("normal");  
+  doc.text(20, 140, ''+ssc.value);
+  doc.text(20, 150, ''+hsc.value);
+  doc.text(20, 160, ''+degree.value);
+  doc.text(20, 170, ''+pg.value);
+  doc.text(20, 200, 'I genuinely declare that all the facts mentioned above are true to my faith, and\r\n I am answerable for its accuracy.')
+// Save the PDF
+doc.save('document.pdf');
+}
+</script>
+
+
+
+
+<script>
+$(document).ready(function(){
+  $('[data-toggle="tooltip"]').tooltip();   
+});
+$(document).ready(function(){
+    $('[data-toggle="popover"]').popover();   
+});
+</script>
